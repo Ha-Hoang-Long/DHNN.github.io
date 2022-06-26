@@ -45,12 +45,16 @@
 </thead>
 <tbody>
     <?php foreach($records as $record){ ?>
-    <tr>
-        <th scope="row"><?=$record['mssv']?></th>
+    <a role="grid" href="#">
+    <tr style="transform: rotate(0);">
+    <!-- <a href="{{route('listing.index',['model'=>'mssv'])}}">lonh</a> -->
+        <th scope="row"><a href="/admin/detail-sinhvien/<?=$record['mssv']?>" class="stretched-link"><?=$record['mssv']?></a></th>
         <td><?=$record['ho']?> <?=$record['ten_lot']?> <?=$record['ten']?></td>
         <td><?=$record['created_at']?></td>
         <td><?=$record['updated_at']?></td>
+        
     </tr>
+    </a>
     <?php } ?>
 
 </tbody>
@@ -68,4 +72,5 @@
 @csrf
 <input type="submit" value="Export EXCEL" name="export" class="btn btn-success">
 </form>
+
 @endsection

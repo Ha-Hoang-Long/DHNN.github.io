@@ -22,4 +22,11 @@ class SinhvienController extends Controller
         Excel::import(new SinhvienImport,$request->file);
         return view('sinhvien.import_form',['user'=>$adminUser]);
     }
+
+    public function detail(Request $request, $mssv){
+        $adminUser = Auth::guard('admin')->user();
+            return view('sinhvien.detail',
+                ['user'=>$adminUser],
+                ['mssv'=>$mssv]);
+    }
 }

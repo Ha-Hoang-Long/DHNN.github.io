@@ -31,7 +31,9 @@ Route::prefix('admin')->group(function(){
         Route::get('/add-acount-user',[AdminController::class,'add_acount_user_form'])->name('admin.add_acount_user');
         Route::get('/import-sinhvien',[SinhvienController::class,'importForm'])->name('Sinhvien.import_sinhvien');
         Route::post('/import-sv',[SinhvienController::class,'importSv'])->name('Sinhvien.import_Sv');
+        Route::get('/detail-sinhvien/{masinhvien}',[SinhvienController::class,'detail'])->name('Sinhvien.detail');
         Route::get('/listing/{model}',[ListingController::class,'index'])->name('listing.index');
+        
     });
     // Route::post('/Admin-dashboard',[AdminController::class,'dashboard']);
 });
