@@ -26,9 +26,9 @@
             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="{{route('listing.index',['model'=>'sinhvien'])}}">Sinh viên</a></li>
-                    <li><a href="index2.html">Giảng viên</a></li>
-                    <li><a href="index3.html">Khoa</a></li>
-                    <li><a href="index3.html">tin tức</a></li>
+                    <li><a href="{{route('listing.index',['model'=>'giangvien'])}}">Giảng viên</a></li>
+                    <li><a href="{{route('listing.index',['model'=>'khoa'])}}">Khoa</a></li>
+                    <li><a href="{{route('listing.index',['model'=>'tintuc'])}}">tin tức</a></li>
                 </ul>
             </li>
             <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>

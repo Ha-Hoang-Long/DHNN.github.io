@@ -38,34 +38,34 @@
 <table class="table table-striped">
 <thead>
 <tr>
-<th>#</th>
-<th>First Name</th>
-<th>Last Name</th>
-<th>Username</th>
+    <?php foreach($Configs as $config){ ?>
+    <th><?=$config['name']?></th>
+    <?php } ?>
 </tr>
 </thead>
 <tbody>
-<tr>
-<th scope="row">1</th>
-<td>Mark</td>
-<td>Otto</td>
-<td>@mdo</td>
-</tr>
-<tr>
-<th scope="row">2</th>
-<td>Jacob</td>
-<td>Thornton</td>
-<td>@fat</td>
-</tr>
-<tr>
-<th scope="row">3</th>
-<td>Larry</td>
-<td>the Bird</td>
-<td>@twitter</td>
-</tr>
+    <?php foreach($records as $record){ ?>
+    <tr>
+        <th scope="row"><?=$record['mssv']?></th>
+        <td><?=$record['ho']?> <?=$record['ten_lot']?> <?=$record['ten']?></td>
+        <td><?=$record['created_at']?></td>
+        <td><?=$record['updated_at']?></td>
+    </tr>
+    <?php } ?>
+
 </tbody>
 </table>
+<?= $records->links("pagination::bootstrap-4") ?>
 </div>
 </div>
 </div>
+<form action="{{url('admin/import-sv')}}" method="POST" enctype="multipart/form-data">
+@csrf
+<input type="file" name="file" accept=".xlsx, .xls, .csv"><br>
+<input type="submit" value="Import EXCEL" name="import" class="btn btn-warning">
+</form>
+<form action="{{url('admin/export-sv')}}" method="POST">
+@csrf
+<input type="submit" value="Export EXCEL" name="export" class="btn btn-success">
+</form>
 @endsection
