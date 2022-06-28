@@ -44,12 +44,17 @@
 </tr>
 </thead>
 <tbody>
-    <?php foreach($records as $record){ ?>
+    <?php
+    var_dump($data)
+    ?>
+    
+    <?php foreach($data as $record){ ?>
     <a role="grid" href="#">
     <tr style="transform: rotate(0);">
     <!-- <a href="{{route('listing.index',['model'=>'mssv'])}}">lonh</a> -->
         <th scope="row"><a href="/admin/detail-sinhvien/<?=$record['mssv']?>" class="stretched-link"><?=$record['mssv']?></a></th>
         <td><?=$record['ho']?> <?=$record['ten_lot']?> <?=$record['ten']?></td>
+        <td><?=$record['ten_lop']?></td>
         <td><?=$record['created_at']?></td>
         <td><?=$record['updated_at']?></td>
         

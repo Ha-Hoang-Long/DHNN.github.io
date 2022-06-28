@@ -16,10 +16,12 @@ class ListingController extends Controller
         $model = new $model;
         $configs = $model->listingConfigs();
         $records = $model::paginate(10);
+        $data = $model->getSinhvien();
         return view('admin.listing', [
             'user' => $adminUser,
             'records' => $records,
-            'Configs' => $configs
+            'Configs' => $configs,
+            'data' => $data
         ]);
     }
 }
